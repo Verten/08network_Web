@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="NetworkResource" extends="struts-default">
+		<!-- action标签描述的是struts的控制器，name是对应的路径，class是action的类名 -->
+		<action name="Resource!*" class="com.network.www.action.ResourceAction">
+			<result>/info/blogsuccess.jsp</result>
+			<!-- input：指定action校验出现错误时会转到的页面 -->
+			<result name="input">/info/blogfail.jsp</result>
+			<result name="already">/info/blogfail.jsp</result>
+			<result name="nologin">/info/nologin.jsp</result>
+		</action>
+	</package>
+
+</struts>

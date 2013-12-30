@@ -1,0 +1,15 @@
+<Context debug="0">
+    <Resource
+            auth="Container"
+            name="jdbc/mydb"
+            type="javax.sql.DataSource"
+            driverClassName="com.mysql.jdbc.Driver"
+            password="19905018"
+            maxIdle="15"
+            maxWait="10000"
+            username="hongbin"
+            url="jdbc:mysql://localhost:3306/network"
+            logAbandoned="true"
+            removeAbandonedTimeout="60"
+            maxActive="5"/>
+</Context>

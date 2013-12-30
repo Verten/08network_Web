@@ -10,6 +10,7 @@
 			<result>/info/loginsuccess.jsp</result>
 			<!-- input：指定action校验出现错误时会转到的页面 -->
 			<result name="input">/info/loginerror.jsp</result>
+			<result name="codeerror">/info/code.jsp</result>
 			<result name="already">/info/loginerror.jsp</result>
 		</action>
 	</package>

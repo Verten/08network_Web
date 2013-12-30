@@ -20,6 +20,11 @@
 				<p class="date">
 					<font style="font-size: 12px;">Error</font>
 				</p>
+				<div class="entry">
+					<p>
+						please check username and password...
+					</p>
+				</div>
 				<div class="meta">
 					<p class="links" style="float: right;">
 						<a href="javascript:void();" class="more" onclick="loginin()">Retry...</a>

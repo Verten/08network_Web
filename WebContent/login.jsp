@@ -49,18 +49,19 @@
 		}
 		if(username.length != 0 && password.length != 0){
 			//$("#loginInForm").submit();
-			alert("<%=session.getAttribute("mycode")%>");
-			if(codetext == "<%=session.getAttribute("mycode")%>"){
-				var mydata = "usernametext="+username+"&passwordtext="+password+"&autologin="+autologin;
+			//alert('${ mycode }');
+			//if(codetext == "<%=session.getAttribute("mycode")%>"){
+				var mydata = "usernametext="+username+"&passwordtext="+password+"&autologin="+autologin+"&code="+codetext;
 				send_request("Login!loginIn.action",mydata);
-			}else{
-				alert("Verification Code is invalid");
-				return false;
-			}
+			//}
+			//else{
+			//	alert("Verification Code is invalid");
+			//	return false;
+			//}
 		}
 	}
 	function reloadcode(){
-		$("#codeMessage").attr("src","test.jsp");
+		$("#codeMessage").attr("src","Code!generateCode.action");
 		//alert("1");
 	}
 	function resettext(){
@@ -88,7 +89,7 @@
 					<td>验证码：</td>
 					<td><input type="text" id="codetext"
 						name="codetext" /><span class="logininfo"></span></td>
-					<td colspan="1"><span><img id="codeMessage" onclick="reloadcode()" src="test.jsp"/></span></td>
+					<td colspan="1"><span><img id="codeMessage" onclick="reloadcode()" src="Code!generateCode.action"/></span></td>
 				</tr>
 				<tr>
 					<td colspan="3" style="font-weight: normal;color: #0094E0;">

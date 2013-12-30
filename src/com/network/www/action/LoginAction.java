@@ -18,6 +18,7 @@ public class LoginAction extends ActionSupport implements SessionAware,
 		ServletRequestAware, ServletResponseAware {
 	private String usernametext;
 	private String passwordtext;
+	private String code;
 	private String autologin;
 	private Map<String, Object> session = null;
 	private HttpServletRequest request;
@@ -59,7 +60,21 @@ public class LoginAction extends ActionSupport implements SessionAware,
 		this.request = request;
 	}
 	
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
 	public String loginIn() {
+		String mycode = (String)session.get("mycode");
+		if(!"".equals(mycode) && mycode != null){
+			if(!code.equalsIgnoreCase(mycode)){
+				return "codeerror";
+			}
+		}
 		String md5password = ChangeToMD5.getMD5Info(passwordtext);
 		if (login.LoginIn(usernametext, md5password)) {
 			if ("true".equals(autologin)) {

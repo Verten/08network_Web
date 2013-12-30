@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 		<%
-			out.print(session.getAttribute("mycode"));
+			out.println("<script type='text/javascript'>");
+			out
+					.println(" alert('Verification Code is invalid'); ");
+			out.println("get_request('login.jsp');");
+			out.println("</script>");
 		%>
 </html>
